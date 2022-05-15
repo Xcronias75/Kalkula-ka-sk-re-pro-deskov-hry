@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Page4">
+    <StackLayout Margin="20,10,20,50">
+        <Label Text="Finální skóre" HorizontalOptions="Center" FontSize="21" TextDecorations="Underline" FontAttributes="Bold"/>
+        <ListView x:Name="playersListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5">
+                            <Label Grid.Column="0" Grid.Row="0" Text="{Binding pName1}" FontAttributes="Bold, Italic" FontSize="18"/>
+                            <Label Grid.Column="0" Grid.Row="0" Text="{Binding pScore1}" />
+                            <Grid>
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding pName2}" FontAttributes="Bold, Italic" FontSize="18"/>
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding pScore2}"/>
+                            </Grid>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label HorizontalOptions="Center" Text="Celkové skóre:" FontAttributes="Bold"/>
+        <Grid >
+            <Label Grid.Column="0" Grid.Row="0" Margin="50,-10" x:Name="fScore1" Text="{Binding fScore1.Text}" TextColor="#26940F"/>
+            <Label Grid.Column="1" Grid.Row="0" Margin="50,-5" x:Name="fScore2" Text="{Binding fscore2.Text}" TextColor="#26940F"/>
+        </Grid>
+        
+        <Button
+            BorderColor="LightGoldenrodYellow"
+            BorderRadius="12"
+            BorderWidth="2"
+            Text="Reset" 
+            BackgroundColor="LightGoldenrodYellow" 
+            TextColor="Black"
+            Clicked="Reset">
+        </Button>
+        
+
+
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Page3_2">
+    <ContentPage.Resources>
+        <Color x:Key="PrussianBlue">#003459</Color>
+        <Color x:Key="CarolinaBlue">#00A8E8</Color>
+        <Color x:Key="RichBlack">#00171F</Color>
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions"
+                    Value="Center"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource RichBlack}"
+                    />
+            <Setter Property="FontFamily"
+                    Value="Comfortaa"/>
+        </Style>
+
+        <Style x:Key="TitleStyle"
+               TargetType="Label"
+               BasedOn="{StaticResource LabelStyle}">
+            <Setter Property="FontSize"
+                   Value="Large"/>
+        </Style>
+    </ContentPage.Resources>
+    <FlexLayout Direction="Column"
+                JustifyContent="SpaceEvenly"
+                Padding="40">
+        <StackLayout>
+            <Label
+                x:Name="Round"
+                Text="Kolo číslo 1."
+                Style="{StaticResource TitleStyle}"
+                FontSize="39"
+            />
+            <Grid>
+                <Label Grid.Column="0" Grid.Row="0"
+                   x:Name="Player1"
+                   Text="{Binding Player1.Text}"
+                   Style="{StaticResource LabelStyle}"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   />
+                <Entry Grid.Column="1" Grid.Row="0" 
+                    x:Name="scoreEntry1"
+                    Keyboard="Numeric"
+                    FontSize="25"
+                    Placeholder="0"
+                    HorizontalOptions="Fill" 
+                    HorizontalTextAlignment="Center"
+                    Margin="0,20,0,0"
+                    MaxLength="3"
+                    />
+                <Label Grid.Column="0" Grid.Row="1" 
+                   x:Name="Player2"
+                   Text="{Binding Player2.Text}"
+                   Style="{StaticResource LabelStyle}"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   />
+                <Entry Grid.Column="1" Grid.Row="1" 
+                    x:Name="scoreEntry2"
+                    Keyboard="Numeric"
+                    FontSize="25"
+                    Placeholder="0"
+                    HorizontalOptions="Fill" 
+                    HorizontalTextAlignment="Center"
+                    Margin="0,20,0,0"
+                    MaxLength="3"
+                    />
+                <Label Grid.Column="0" Grid.Row="2" 
+                   x:Name="Player3"
+                   Text="{Binding Player3.Text}"
+                   Style="{StaticResource LabelStyle}"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   />
+                <Entry Grid.Column="1" Grid.Row="2" 
+                    x:Name="scoreEntry3"
+                    Keyboard="Numeric"
+                    FontSize="25"
+                    Placeholder="0"
+                    HorizontalOptions="Fill" 
+                    HorizontalTextAlignment="Center"
+                    Margin="0,20,0,0"
+                    MaxLength="3"
+                    />
+                <Label Grid.Column="0" Grid.Row="3" 
+                   x:Name="Player4"
+                   Text="{Binding Player4.Text}"
+                   Style="{StaticResource LabelStyle}"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   />
+                <Entry Grid.Column="1" Grid.Row="3" 
+                    x:Name="scoreEntry4"
+                    Keyboard="Numeric"
+                    FontSize="25"
+                    Placeholder="0"
+                    HorizontalOptions="Fill" 
+                    HorizontalTextAlignment="Center"
+                    Margin="0,20,0,0"
+                    MaxLength="3"
+                    />
+            </Grid>
+
+            <Grid>
+                <Button Grid.Column="0" Grid.Row="0" 
+                        BorderColor="#26940F"
+                        BorderRadius="12"
+                        BorderWidth="2"
+                        Text="Další kolo" 
+                        BackgroundColor="#26940F" 
+                        TextColor="#FFFFFF"
+                        Clicked="Next_round"
+                        >
+                </Button>
+                <Button Grid.Column="1" Grid.Row="0" 
+                        BorderColor="#C41309"
+                        BorderRadius="12"
+                        BorderWidth="2"
+                        Text="Konec" 
+                        BackgroundColor="#C41309" 
+                        TextColor="#FFFFFF"
+                        Clicked="Button_Clicked">
+                </Button>
+            </Grid>
+            <Button Grid.Column="1" Grid.Row="0" 
+                        BorderColor="LightGoldenrodYellow"
+                        BorderRadius="12"
+                        BorderWidth="2"
+                        Text="Reset" 
+                        BackgroundColor="LightGoldenrodYellow" 
+                        TextColor="Black"
+                        Clicked="Reset">
+            </Button>
+        </StackLayout>
+    </FlexLayout>
+</ContentPage>

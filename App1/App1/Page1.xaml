@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             x:Class="App1.Page1">
+    <ContentPage.Resources>
+        <Color x:Key="PrussianBlue">#003459</Color>
+        <Color x:Key="CarolinaBlue">#00A8E8</Color>
+        <Color x:Key="RichBlack">#00171F</Color>
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions"
+                    Value="Center"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource RichBlack}"
+                    />
+            <Setter Property="FontFamily"
+                    Value="Comfortaa"/>
+        </Style>
+
+        <Style x:Key="TitleStyle"
+               TargetType="Label"
+               BasedOn="{StaticResource LabelStyle}">
+            <Setter Property="FontSize"
+                   Value="Large"/>
+        </Style>
+
+        <Style x:Key="ValueStyle"
+               TargetType="Label"
+               BasedOn="{StaticResource LabelStyle}">
+            <Setter Property="FontSize"
+                    Value="Large"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource CarolinaBlue}"/>
+        </Style>
+        <Style TargetType="Slider">
+            <Setter Property="ThumbColor"
+                    Value="{StaticResource PrussianBlue}"
+                    />
+            <Setter Property="MinimumTrackColor"
+                    Value="{StaticResource PrussianBlue}"
+                    />
+            <Setter Property="MaximumTrackColor"
+                    Value="{StaticResource CarolinaBlue}"
+                    />
+        </Style>
+    </ContentPage.Resources>
+    <FlexLayout Direction="Column"
+                JustifyContent="SpaceEvenly"
+                Padding="40">
+        <StackLayout>
+            <Label Text="Zvolte počet hráčů:"
+                   Style="{StaticResource TitleStyle}"/>
+            <Label Text="{Binding Source={x:Reference HeightSlider},
+                    Path=Value,
+                    StringFormat='{0:F0}'}"
+                   Style="{StaticResource ValueStyle}"/>
+            <Slider x:Name="HeightSlider"
+                    Maximum="6"
+                    Minimum="2"
+                    Value="{Binding Player}"/>
+        </StackLayout>
+        
+        <StackLayout>
+            <Label Text="Zvolil jsi:"
+                   Style="{StaticResource LabelStyle}"
+                   />
+            <Label x:Name="Output"
+                   Text="{Binding PlayerNumber}"
+                   Style="{StaticResource LabelStyle}"
+                   FontSize="48"
+                   />
+            <Label Text="{Binding Classification}"
+                   Style="{StaticResource LabelStyle}"
+                   />
+            <Label Text="{Binding Cislovydat}"
+                   Style="{StaticResource LabelStyle}"
+                   TextColor="Transparent"
+                   />
+            <Button x:Name="button"
+                BorderColor="#26940F"
+                BorderRadius="12"
+                BorderWidth="2"
+                Text="Pokračovat"
+                Margin="20,10"
+                BackgroundColor="#26940F"
+                TextColor="#FFFFFF"
+                Clicked="Button_Clicked"
+                />
+        </StackLayout>
+    </FlexLayout>
+</ContentPage>

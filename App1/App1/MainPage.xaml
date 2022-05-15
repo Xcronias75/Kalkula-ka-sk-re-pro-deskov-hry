@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:App1;assembly=App1"
+             mc:Ignorable="d"
+             x:Class="App1.MainPage">
+
+    <StackLayout Margin="25,50">
+        <Image
+        Source="welcomepage_logo.png"
+        Aspect="AspectFit"
+        HeightRequest="80"
+        Margin="0,20"
+        />
+        <Label Text="Vítejte v aplikaci!" 
+               FontSize="Large"
+               TextColor="#666666"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" Margin="0,20,0,0"
+               />
+        <Button x:Name="button"
+                BorderColor="#26940F"
+                BorderRadius="12"
+                BorderWidth="2"
+                Text="Pokračovat"
+                Margin="20,10"
+                BackgroundColor="#26940F"
+                TextColor="#FFFFFF"
+                Clicked="Button_Clicked"
+                />
+    </StackLayout>
+</ContentPage>

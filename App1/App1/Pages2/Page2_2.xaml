@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Page2_2">
+    <ContentPage.Resources>
+        <Color x:Key="PrussianBlue">#003459</Color>
+        <Color x:Key="CarolinaBlue">#00A8E8</Color>
+        <Color x:Key="RichBlack">#00171F</Color>
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions"
+                    Value="Center"/>
+            <Setter Property="TextColor"
+                    Value="{StaticResource RichBlack}"
+                    />
+            <Setter Property="FontFamily"
+                    Value="Comfortaa"/>
+        </Style>
+
+        <Style x:Key="TitleStyle"
+               TargetType="Label"
+               BasedOn="{StaticResource LabelStyle}">
+            <Setter Property="FontSize"
+                   Value="Large"/>
+        </Style>
+    </ContentPage.Resources>
+    <FlexLayout Direction="Column"
+                JustifyContent="SpaceEvenly"
+                Padding="40">
+        <StackLayout>
+            <Label Text="Pojmenujte hráče:"
+                   Style="{StaticResource TitleStyle}"/>
+            <Entry x:Name="nameEntry1"
+                Text=""
+                Placeholder="Hráč č.1"
+                FontSize="Large"
+                   MaxLength="12"
+            />
+            <Entry x:Name="nameEntry2"
+                Text=""
+                Placeholder="Hráč č.2"
+                FontSize="Large"
+                   MaxLength="12"
+            />
+            <Entry x:Name="nameEntry3"
+                Text=""
+                Placeholder="Hráč č.3"
+                FontSize="Large"
+                   MaxLength="12"
+            />
+            <Entry x:Name="nameEntry4"
+                Text=""
+                Placeholder="Hráč č.4"
+                FontSize="Large"
+                   MaxLength="12"
+            />
+            <Button x:Name="button"
+                BorderColor="#26940F"
+                BorderRadius="12"
+                BorderWidth="2"
+                Text="Pokračovat"
+                Margin="20,10"
+                BackgroundColor="#26940F"
+                TextColor="#FFFFFF"
+                Clicked="Button_Clicked"
+                />
+            <Button x:Name="return"
+                BorderColor="#C41309"
+                BorderRadius="12"
+                BorderWidth="2"
+                Text="Změnit počet hráčů"
+                Margin="20,0"
+                BackgroundColor="#C41309"
+                TextColor="#FFFFFF"
+                Clicked="Return_Clicked"
+                />
+
+        </StackLayout>
+    </FlexLayout>
+</ContentPage>
